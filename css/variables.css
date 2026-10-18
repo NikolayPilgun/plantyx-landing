@@ -1,0 +1,27 @@
+:root {
+  /* Цветовая палитра */
+  --color-bg: #ffffff;
+  --color-bg-alt: #f5f5f5;
+  --color-text-main: #111111;
+  --color-text-muted: #666666;
+  --color-text-light: #999999;
+  --color-accent: #2d5a27; /* Натуральный зелёный для микроакцентов */
+  --color-rating: #a3e635; /* Салатовые звёзды рейтинга */
+  --color-border: #e5e5e5;
+
+  /* Типографика */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Отступы и контейнер */
+  --container-max-width: 1280px;
+  --container-padding-desktop: 40px;
+  --container-padding-mobile: 20px;
+
+  /* Радиусы скругления */
+  --radius-pill: 9999px;
+  --radius-card: 8px;
+
+  /* Переходы для плавности */
+  --transition-fast: 0.2s ease-in-out;
+}
