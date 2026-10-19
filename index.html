@@ -17,6 +17,129 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- Хедер -->
+    <header class="header">
+      <div class="container header__container">
+        <a href="#" class="header__logo" aria-label="Planty'x Home">
+          <!-- SVG logo -->
+          <span class="header__logo-text">Planty'x</span>
+        </a>
+        <nav class="header__nav" aria-label="Main Navigation">
+          <ul class="header__menu">
+            <li><a href="#plants" class="header__link">Plants</a></li>
+            <li><a href="#offices" class="header__link">For offices</a></li>
+            <li><a href="#care" class="header__link">Plants care</a></li>
+            <li><a href="#about" class="header__link">About</a></li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button class="header__icon-btn" aria-label="Search">
+            <svg width="20" height="20" fill="none" stroke="currentColor">
+              <circle cx="9" cy="9" r="6" />
+              <path d="m14 14 4 4" />
+            </svg>
+          </button>
+          <button class="header__icon-btn" aria-label="Profile">
+            <svg width="20" height="20" fill="none" stroke="currentColor">
+              <circle cx="10" cy="7" r="4" />
+              <path d="M4 18c0-3 3-5 6-5s6 2 6 5" />
+            </svg>
+          </button>
+          <button class="header__icon-btn" aria-label="Cart">
+            <svg width="20" height="20" fill="none" stroke="currentColor">
+              <path d="M4 4h2l2 10h8l2-7H7" />
+            </svg>
+          </button>
+          <!-- Мобильная кнопка бургера -->
+          <button class="header__burger-btn" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Hero Секция -->
+      <section class="hero">
+        <div class="container hero__container">
+          <div class="hero__content">
+            <h1 class="hero__title">Best house<br />plants varieties.</h1>
+            <a href="#shop" class="btn btn--primary">Shop now</a>
+            <p class="hero__subtitle">Beautiful living greenery for<br />homes and offices</p>
+            <div class="hero__press">
+              <span class="hero__press-label">We've been mentioned in the press</span>
+              <div class="hero__press-logos">
+                <span class="hero__press-item">Bloomberg</span>
+                <span class="hero__press-item">Forbes</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero__media">
+            <img
+              src="assets/images/hero-plant.jpg"
+              alt="Strelitzia plant in wooden vase"
+              class="hero__image"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Секция «О нашем подходе / Процесс» -->
+      <section class="process__section">
+        <div class="container">
+          <div class="process__header">
+            <p class="process__intro">
+              Each houseplant set is handled quickly and safely before being sent to your
+              destination in specially designed insulated packaging.
+            </p>
+            <div class="process__heading-wrap">
+              <h2 class="section-title process__title">
+                Learn how we take care of your plant at every stage of its journey from our
+                greenhouse to your home.
+              </h2>
+              <a href="#learn-more" class="link-arrow">
+                <span>LEARN MORE</span>
+                <span class="arrow-circle">&rarr;</span>
+              </a>
+            </div>
+          </div>
+          <div class="process__slider">
+            <div class="process__banner">
+              <img
+                src="assets/images/process-step-1.jpg"
+                alt="Planting young sprouts"
+                class="process__image"
+              />
+            </div>
+            <div class="process__controls">
+              <span class="process__step-badge">Step 1</span>
+              <h3 class="process__step-title">We put everything together</h3>
+              <div class="slider-arrows">
+                <button class="arrow-btn" aria-label="Previous step">&larr;</button>
+                <button class="arrow-btn" aria-label="Next step">&rarr;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Сюда далее добавим: Shop (Каталог), Reviews (Отзывы), Lifestyle Gallery, Instagram, Newsletter -->
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+      <div class="container footer__container">
+        <div class="footer__logo">Planty'x</div>
+        <ul class="footer__links">
+          <li><a href="#help">Help</a></li>
+          <li><a href="#contact">Contact US</a></li>
+          <li><a href="#privacy">Privacy & Terms</a></li>
+        </ul>
+        <div class="footer__socials">
+          <a href="#" aria-label="Facebook">Fb</a>
+          <a href="#" aria-label="Twitter">Tw</a>
+          <a href="#" aria-label="Instagram">Ig</a>
+        </div>
+      </div>
+    </footer>
     <script src="js/main.js"></script>
   </body>
 </html>
