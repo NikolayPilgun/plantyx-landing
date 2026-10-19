@@ -1,0 +1,92 @@
+/* ==========================================================================
+   MODERN CSS RESET
+   ========================================================================== */
+
+/* 1. Box-sizing для ВСЕХ элементов, включая псевдоэлементы */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Убираем дефолтные отступы у всех элементов */
+* {
+  margin: 0;
+}
+
+/* 3. Базовые настройки документа */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 4. Медиа по умолчанию — блочные и не вылезают за контейнер */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Формы наследуют шрифт от родителя */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* 6. Заголовки и текст переносятся нормально */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 7. Списки без маркеров (только для навигации — включаем точечно) */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  padding: 0;
+}
+
+/* 8. Кнопки — «чистые» по умолчанию */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 9. Ссылки наследуют цвет */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 10. Доступность: отключаем анимации для тех, кто просил */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
