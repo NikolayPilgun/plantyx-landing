@@ -4,12 +4,12 @@
 :root {
   /* --- Цвета --- */
   --color-bg: #ffffff;
-  --color-bg-alt: #f7f7f5; /* светлые плашки / футер */
+  --color-bg-alt: #f7f7f5;
   --color-text-main: #111111;
   --color-text-muted: #666666;
   --color-text-light: #999999;
   --color-accent: #2d5a27;
-  --color-rating: #b5b83f; /* тёплый горчичный, как в макете */
+  --color-rating: #b5b83f;
   --color-border: #e5e5e5;
 
   /* --- Типографика --- */
@@ -19,9 +19,11 @@
   /* --- Контейнер и поля --- */
   --container-max-width: 1280px;
   --container-padding-desktop: 40px;
+  --container-padding-tablet: 32px; /* FIX: добавлен промежуточный шаг */
   --container-padding-mobile: 20px;
 
   /* --- Вертикальный ритм (шаг 8px) --- */
+  --space-2xs: 4px; /* FIX: мелкий шаг нужен для gap между иконками */
   --space-xs: 8px;
   --space-sm: 16px;
   --space-md: 32px;
@@ -37,6 +39,9 @@
   --transition-fast: 0.2s ease-in-out;
   --transition: 0.25s ease;
 
-  /* --- Тени (нужны для карточек/шапки) --- */
+  /* --- Тени --- */
   --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.06);
+
+  /* --- Высоты компонентов (FIX: один источник правды) --- */
+  --header-height: 80px;
 }

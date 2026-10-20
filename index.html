@@ -25,7 +25,7 @@
           <span class="header__logo-text">Planty'x</span>
         </a>
         <nav class="header__nav" aria-label="Main Navigation">
-          <ul class="header__menu">
+          <ul class="header__menu" role="list">
             <li><a href="#plants" class="header__link">Plants</a></li>
             <li><a href="#offices" class="header__link">For offices</a></li>
             <li><a href="#care" class="header__link">Plants care</a></li>
@@ -34,24 +34,50 @@
         </nav>
         <div class="header__actions">
           <button class="header__icon-btn" aria-label="Search">
-            <svg width="20" height="20" fill="none" stroke="currentColor">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+            >
               <circle cx="9" cy="9" r="6" />
               <path d="m14 14 4 4" />
             </svg>
           </button>
           <button class="header__icon-btn" aria-label="Profile">
-            <svg width="20" height="20" fill="none" stroke="currentColor">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+            >
               <circle cx="10" cy="7" r="4" />
               <path d="M4 18c0-3 3-5 6-5s6 2 6 5" />
             </svg>
           </button>
           <button class="header__icon-btn" aria-label="Cart">
-            <svg width="20" height="20" fill="none" stroke="currentColor">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+            >
               <path d="M4 4h2l2 10h8l2-7H7" />
             </svg>
           </button>
           <!-- Мобильная кнопка бургера -->
-          <button class="header__burger-btn" aria-label="Open menu" aria-expanded="false">
+          <button
+            class="header__burger-btn"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
             <span></span>
             <span></span>
           </button>
@@ -77,8 +103,10 @@
           <div class="hero__media">
             <img
               src="assets/images/hero-plant.jpg"
-              alt="Strelitzia plant in wooden vase"
+              alt="Strelitzia nicolai in two wooden planters"
               class="hero__image"
+              width="640"
+              height="800"
             />
           </div>
         </div>
@@ -128,7 +156,7 @@
     <footer class="footer">
       <div class="container footer__container">
         <div class="footer__logo">Planty'x</div>
-        <ul class="footer__links">
+        <ul class="footer__links" role="list">
           <li><a href="#help">Help</a></li>
           <li><a href="#contact">Contact US</a></li>
           <li><a href="#privacy">Privacy & Terms</a></li>

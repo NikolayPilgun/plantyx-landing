@@ -20,6 +20,8 @@ html {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   scroll-behavior: smooth;
+  /* FIX: компенсирует высоту фиксированной шапки при переходе по якорям */
+  scroll-padding-top: 96px;
 }
 
 body {
@@ -48,6 +50,11 @@ select {
   color: inherit;
 }
 
+/* 5b. FIX: textarea по умолчанию не резиновая по горизонтали */
+textarea {
+  resize: vertical;
+}
+
 /* 6. Заголовки и текст переносятся нормально */
 p,
 h1,
@@ -59,7 +66,7 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* 7. Списки без маркеров (только для навигации — включаем точечно) */
+/* 7. Списки без маркеров — только там, где явно задан role="list" */
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
@@ -71,6 +78,10 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+  /* FIX: убирает дефолтный padding — иначе иконки в шапке «разъезжаются» */
+  padding: 0;
+  /* FIX: Safari красит кнопки системным синим, если не сбросить */
+  color: inherit;
 }
 
 /* 9. Ссылки наследуют цвет */

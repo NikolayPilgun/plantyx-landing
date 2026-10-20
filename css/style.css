@@ -4,12 +4,12 @@
 :root {
   /* --- Цвета --- */
   --color-bg: #ffffff;
-  --color-bg-alt: #f7f7f5; /* светлые плашки / футер */
+  --color-bg-alt: #f7f7f5;
   --color-text-main: #111111;
   --color-text-muted: #666666;
   --color-text-light: #999999;
   --color-accent: #2d5a27;
-  --color-rating: #b5b83f; /* тёплый горчичный, как в макете */
+  --color-rating: #b5b83f;
   --color-border: #e5e5e5;
 
   /* --- Типографика --- */
@@ -19,9 +19,11 @@
   /* --- Контейнер и поля --- */
   --container-max-width: 1280px;
   --container-padding-desktop: 40px;
+  --container-padding-tablet: 32px; /* FIX: добавлен промежуточный шаг */
   --container-padding-mobile: 20px;
 
   /* --- Вертикальный ритм (шаг 8px) --- */
+  --space-2xs: 4px; /* FIX: мелкий шаг нужен для gap между иконками */
   --space-xs: 8px;
   --space-sm: 16px;
   --space-md: 32px;
@@ -37,20 +39,34 @@
   --transition-fast: 0.2s ease-in-out;
   --transition: 0.25s ease;
 
-  /* --- Тени (нужны для карточек/шапки) --- */
+  /* --- Тени --- */
   --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.06);
+
+  /* --- Высоты компонентов (FIX: один источник правды) --- */
+  --header-height: 80px;
 }
+
+/* ==========================================================================
+   Брейкпоинты проекта:
+   mobile  — < 768px
+   tablet  — 768px – 1023px
+   desktop — ≥ 1024px
+   wide    — ≥ 1440px
+   ========================================================================== */
 
 /* ==========================================================================
    BASE LAYOUT
    ========================================================================== */
+
 body {
   font-family: var(--font-sans);
   color: var(--color-text-main);
   background: var(--color-bg);
   font-size: 16px;
+  line-height: 1.5;
 }
-/* Контейнер: ограничивает ширину + боковые поля */
+
+/* Контейнер */
 .container {
   width: 100%;
   max-width: var(--container-max-width);
@@ -58,28 +74,64 @@ body {
   padding-inline: var(--container-padding-mobile);
 }
 
+/* FIX: паддинг растёт на планшете, а не только на 1024px */
+@media (min-width: 768px) {
+  .container {
+    padding-inline: var(--container-padding-tablet);
+  }
+}
+
 @media (min-width: 1024px) {
   .container {
     padding-inline: var(--container-padding-desktop);
   }
 }
+
+/* ==========================================================================
+   СЕКЦИИ
+   ========================================================================== */
+
+/* FIX: отступы перевёрнуты — mobile-first, растут вверх */
 .section {
-  padding-block: var(--space-xl);
+  padding-block: var(--space-lg); /* mobile: 64px */
 }
-@media (min-width: 767px) {
+
+@media (min-width: 768px) {
   .section {
-    padding-block: var(--space-lg);
+    padding-block: var(--space-xl); /* tablet: 96px */
   }
 }
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: var(--space-2xl); /* desktop: 128px */
+  }
+}
+
 /* Заголовки секций */
 .section-title {
   font-family: var(--font-serif);
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.01em;
+  font-size: 28px; /* FIX: базовый размер был не задан вовсе */
 }
-/* Кнопки */
 
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 48px;
+  }
+}
+
+/* ==========================================================================
+   КНОПКИ
+   ========================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -88,21 +140,33 @@ body {
   border-radius: var(--radius-pill);
   font-size: 14px;
   font-weight: 500;
-  transition: var(--transition-fast);
+  line-height: 1;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
 }
+
 .btn--primary {
   background: var(--color-text-main);
   color: #fff;
 }
+
 .btn--primary:hover {
   background: #333;
   transform: translateY(-2px);
 }
+
 .btn--primary:active {
-  transform: translateY(0px);
+  transform: translateY(0);
 }
-/* Фокус для доступности */
+
+/* ==========================================================================
+   ДОСТУПНОСТЬ
+   ========================================================================== */
+
+/* FIX: фокус только для клавиатуры, но заметный на любом фоне */
 :focus-visible {
   outline: 2px solid var(--color-text-main);
   outline-offset: 3px;
+  border-radius: 2px;
 }
