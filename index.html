@@ -3,28 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Planty'x — best house plants varieties for homes and offices. Living greenery, delivered with care."
+    />
     <title>Planty'x — Best House Plants Varieties</title>
-    <!-- Подключение шрифтов (Google Fonts для быстрого старта) -->
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <!-- Стили -->
+
+    <!-- Styles -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- Хедер -->
+    <!-- ================= HEADER ================= -->
     <header class="header">
       <div class="container header__container">
-        <a href="#" class="header__logo" aria-label="Planty'x Home">
-          <!-- SVG logo -->
+        <!-- Logo -->
+        <a href="#" class="header__logo" aria-label="Planty'x — home">
+          <svg
+            class="header__logo-icon"
+            width="28"
+            height="24"
+            viewBox="0 0 32 28"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M16 26C16 26 12 18 6 16C0 14 1 6 1 6C1 6 8 6 13 11C15.5 13.5 16 17 16 17C16 17 16.5 13.5 19 11C24 6 31 6 31 6C31 6 32 14 26 16C20 18 16 26 16 26Z"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linejoin="round"
+            />
+            <path d="M16 26V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+          </svg>
           <span class="header__logo-text">Planty'x</span>
         </a>
-        <nav class="header__nav" aria-label="Main Navigation">
+
+        <!-- Navigation -->
+        <nav class="header__nav" id="main-navigation" aria-label="Main navigation">
           <ul class="header__menu" role="list">
             <li><a href="#plants" class="header__link">Plants</a></li>
             <li><a href="#offices" class="header__link">For offices</a></li>
@@ -32,61 +57,83 @@
             <li><a href="#about" class="header__link">About</a></li>
           </ul>
         </nav>
+
+        <!-- Actions -->
         <div class="header__actions">
-          <button class="header__icon-btn" aria-label="Search">
+          <button class="header__action-btn" type="button" aria-label="Search">
             <svg
-              aria-hidden="true"
-              focusable="false"
               width="20"
               height="20"
+              viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-            >
-              <circle cx="9" cy="9" r="6" />
-              <path d="m14 14 4 4" />
-            </svg>
-          </button>
-          <button class="header__icon-btn" aria-label="Profile">
-            <svg
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
               aria-hidden="true"
               focusable="false"
-              width="20"
-              height="20"
-              fill="none"
-              stroke="currentColor"
             >
-              <circle cx="10" cy="7" r="4" />
-              <path d="M4 18c0-3 3-5 6-5s6 2 6 5" />
+              <circle cx="11" cy="11" r="7" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </button>
-          <button class="header__icon-btn" aria-label="Cart">
+
+          <a href="#account" class="header__action-btn" aria-label="Profile">
             <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
               aria-hidden="true"
               focusable="false"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </a>
+
+          <a href="#cart" class="header__action-btn" aria-label="Cart">
+            <svg
               width="20"
               height="20"
+              viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
             >
-              <path d="M4 4h2l2 10h8l2-7H7" />
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
-          </button>
-          <!-- Мобильная кнопка бургера -->
+          </a>
+
+          <!-- Burger -->
           <button
             class="header__burger-btn"
+            type="button"
             aria-label="Open menu"
             aria-expanded="false"
-            aria-controls="mobile-menu"
+            aria-controls="main-navigation"
           >
-            <span></span>
-            <span></span>
+            <span class="burger-box">
+              <span class="burger-line"></span>
+            </span>
           </button>
         </div>
       </div>
     </header>
+
     <main>
-      <!-- Hero Секция -->
-      <section class="hero">
+      <!-- ================= HERO ================= -->
+      <section class="hero section">
         <div class="container hero__container">
           <div class="hero__content">
             <h1 class="hero__title">Best house<br />plants varieties.</h1>
@@ -100,6 +147,7 @@
               </div>
             </div>
           </div>
+
           <div class="hero__media">
             <img
               src="assets/images/hero-plant.jpg"
@@ -107,11 +155,13 @@
               class="hero__image"
               width="640"
               height="800"
+              loading="eager"
             />
           </div>
         </div>
       </section>
-      <!-- Секция «О нашем подходе / Процесс» -->
+
+      <!-- ================= PROCESS ================= -->
       <section class="process section">
         <div class="container">
           <div class="process__header">
@@ -126,40 +176,43 @@
               </h2>
               <a href="#learn-more" class="link-arrow">
                 <span>LEARN MORE</span>
-                <span class="arrow-circle">&rarr;</span>
+                <span class="arrow-circle" aria-hidden="true">&rarr;</span>
               </a>
             </div>
           </div>
+
           <div class="process__slider">
             <div class="process__banner">
               <img
                 src="assets/images/process-step-1.jpg"
                 alt="Planting young sprouts"
                 class="process__image"
+                width="800"
+                height="600"
+                loading="lazy"
               />
             </div>
             <div class="process__controls">
               <span class="process__step-badge">Step 1</span>
               <h3 class="process__step-title">We put everything together</h3>
               <div class="slider-arrows">
-                <button class="arrow-btn" aria-label="Previous step">&larr;</button>
-                <button class="arrow-btn" aria-label="Next step">&rarr;</button>
+                <button class="arrow-btn" type="button" aria-label="Previous step">&larr;</button>
+                <button class="arrow-btn" type="button" aria-label="Next step">&rarr;</button>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- Сюда далее добавим: Shop (Каталог), Reviews (Отзывы), Lifestyle Gallery, Instagram, Newsletter -->
     </main>
 
-    <!-- Футер -->
+    <!-- ================= FOOTER ================= -->
     <footer class="footer">
       <div class="container footer__container">
         <div class="footer__logo">Planty'x</div>
         <ul class="footer__links" role="list">
           <li><a href="#help">Help</a></li>
           <li><a href="#contact">Contact US</a></li>
-          <li><a href="#privacy">Privacy & Terms</a></li>
+          <li><a href="#privacy">Privacy &amp; Terms</a></li>
         </ul>
         <div class="footer__socials">
           <a href="#" aria-label="Facebook">Fb</a>
@@ -168,6 +221,7 @@
         </div>
       </div>
     </footer>
+
     <script src="js/main.js"></script>
   </body>
 </html>

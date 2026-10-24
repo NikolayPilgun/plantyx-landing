@@ -6,56 +6,56 @@
   --color-bg: #ffffff;
   --color-bg-alt: #f7f7f5;
   --color-text-main: #111111;
-  --color-text-muted: #666666;
-  --color-text-light: #999999;
+  --color-text-muted: #555555;
+  --color-text-light: #888888;
   --color-accent: #2d5a27;
   --color-rating: #b5b83f;
-  --color-border: #e5e5e5;
+  --color-border: #e8e8e8;
 
   /* --- Типографика --- */
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* --- Контейнер и поля --- */
-  --container-max-width: 1280px;
-  --container-padding-desktop: 40px;
-  --container-padding-tablet: 32px; /* FIX: добавлен промежуточный шаг */
+  --container-max-width: 1320px;
+  --container-padding-desktop: 48px;
+  --container-padding-tablet: 32px;
   --container-padding-mobile: 20px;
 
-  /* --- Вертикальный ритм (шаг 8px) --- */
-  --space-2xs: 4px; /* FIX: мелкий шаг нужен для gap между иконками */
+  /* --- Вертикальный ритм --- */
+  --space-2xs: 4px;
   --space-xs: 8px;
   --space-sm: 16px;
-  --space-md: 32px;
-  --space-lg: 64px;
-  --space-xl: 96px;
-  --space-2xl: 128px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-2xl: 96px;
 
   /* --- Радиусы --- */
   --radius-pill: 9999px;
   --radius-card: 8px;
 
   /* --- Переходы --- */
-  --transition-fast: 0.2s ease-in-out;
-  --transition: 0.25s ease;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
 
   /* --- Тени --- */
   --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.06);
 
-  /* --- Высоты компонентов (FIX: один источник правды) --- */
-  --header-height: 80px;
+  /* --- Высоты хедера --- */
+  --header-height-mobile: 64px;
+  --header-height-desktop: 88px;
 }
 
 /* ==========================================================================
    Брейкпоинты проекта:
    mobile  — < 768px
    tablet  — 768px – 1023px
-   desktop — ≥ 1024px
-   wide    — ≥ 1440px
+   desktop — >= 1024px
    ========================================================================== */
 
 /* ==========================================================================
-   BASE LAYOUT
+   BASE
    ========================================================================== */
 
 body {
@@ -65,7 +65,6 @@ body {
   font-size: 16px;
   line-height: 1.5;
 }
-
 /* Контейнер */
 .container {
   width: 100%;
@@ -73,62 +72,45 @@ body {
   margin-inline: auto;
   padding-inline: var(--container-padding-mobile);
 }
-
-/* FIX: паддинг растёт на планшете, а не только на 1024px */
 @media (min-width: 768px) {
   .container {
     padding-inline: var(--container-padding-tablet);
   }
 }
-
 @media (min-width: 1024px) {
   .container {
     padding-inline: var(--container-padding-desktop);
   }
 }
-
 /* ==========================================================================
    СЕКЦИИ
    ========================================================================== */
-
-/* FIX: отступы перевёрнуты — mobile-first, растут вверх */
 .section {
-  padding-block: var(--space-lg); /* mobile: 64px */
+  padding-block: var(--space-xl);
 }
-
 @media (min-width: 768px) {
   .section {
-    padding-block: var(--space-xl); /* tablet: 96px */
+    padding-block: var(--space-2xl);
   }
 }
-
-@media (min-width: 1024px) {
-  .section {
-    padding-block: var(--space-2xl); /* desktop: 128px */
-  }
-}
-
 /* Заголовки секций */
 .section-title {
   font-family: var(--font-serif);
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  font-size: 28px; /* FIX: базовый размер был не задан вовсе */
+  font-size: 28px;
 }
-
 @media (min-width: 768px) {
   .section-title {
     font-size: 36px;
   }
 }
-
 @media (min-width: 1024px) {
   .section-title {
     font-size: 48px;
   }
 }
-
 /* ==========================================================================
    КНОПКИ
    ========================================================================== */
@@ -145,28 +127,231 @@ body {
     background-color var(--transition-fast),
     transform var(--transition-fast);
 }
-
 .btn--primary {
-  background: var(--color-text-main);
-  color: #fff;
+  background: #111111;
+  color: #ffffff;
 }
-
 .btn--primary:hover {
   background: #333;
   transform: translateY(-2px);
 }
-
 .btn--primary:active {
-  transform: translateY(0);
+  transform: translateY(0px);
 }
-
 /* ==========================================================================
    ДОСТУПНОСТЬ
    ========================================================================== */
-
-/* FIX: фокус только для клавиатуры, но заметный на любом фоне */
 :focus-visible {
   outline: 2px solid var(--color-text-main);
   outline-offset: 3px;
   border-radius: 2px;
 }
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-bg);
+  height: var(--header-height-mobile);
+  transition: box-shadow var(--transition-fast);
+}
+.header--scrolled {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  height: 100%;
+}
+/* --- Логотип --- */
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.header__logo-icon {
+  flex-shrink: 0;
+}
+.header__logo-text {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+/* --- Навигация: мобильный drawer --- */
+@media (max-width: 1023px) {
+  .header__nav {
+    position: fixed;
+    top: var(--header-height-mobile);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-bg);
+    padding: var(--space-xl) var(--container-padding-mobile);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity var(--transition-normal),
+      transform var(--transition-normal),
+      visibility var(--transition-normal);
+  }
+  .header__nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .header__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+  .header__link {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-text-main);
+  }
+}
+/* --- Навигация: десктоп --- */
+@media (min-width: 1024px) {
+  .header {
+    height: var(--header-height-desktop);
+  }
+  .header__logo-text {
+    font-size: 26px;
+  }
+  .header__nav {
+    display: block;
+    position: sticky;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    padding: 0;
+    background: none;
+  }
+  .header__menu {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+  .header__link {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    padding-block: var(--space-xs);
+    transform: color var(--transition-fast);
+  }
+  .header__link:hover {
+    color: var(--color-text-main);
+  }
+  .header__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--color-text-main);
+    transition: width var(--transition-fast);
+  }
+  .header__link:hover::after {
+    width: 100%;
+  }
+}
+/* --- Кнопки действий --- */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+@media (min-width: 768px) {
+  .header__actions {
+    gap: 12px;
+  }
+}
+.header__action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+.header__action-btn:hover {
+  background-color: var(--color-bg-alt);
+}
+/* --- Бургер --- */
+.header__burger-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+.burger-box {
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 14px;
+}
+.burger-line,
+.burger-box::before,
+.burger-box::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text-main);
+  border-radius: 2px;
+  transition:
+    transform var(--transition-fast),
+    top var(--transition-fast),
+    bottom var(--transition-fast),
+    opacity var(--transition-fast);
+}
+.burger-box::before {
+  top: 0;
+}
+.burger-line {
+  top: 6px;
+}
+.burger-box::after {
+  bottom: 0;
+}
+.header__burger-btn.is-active .burger-box::before {
+  top: 6px;
+  transform: rotate(45deg);
+}
+.header__burger-btn.is-active .burger-line {
+  opacity: 0;
+}
+.header__burger-btn.is-active .burger-box::after {
+  bottom: 6px;
+  transform: rotate(-45deg);
+}
+@media (min-width: 1024px) {
+  .header__burger-btn {
+    display: none;
+  }
+}
+/* ==========================================================================
+   HERO
+   ========================================================================== */

@@ -2,14 +2,14 @@
    MODERN CSS RESET
    ========================================================================== */
 
-/* 1. Box-sizing для ВСЕХ элементов, включая псевдоэлементы */
+/* 1. Box-sizing для всех элементов, включая псевдоэлементы */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* 2. Убираем дефолтные отступы у всех элементов */
+/* 2. Убираем дефолтные отступы */
 * {
   margin: 0;
 }
@@ -20,7 +20,6 @@ html {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   scroll-behavior: smooth;
-  /* FIX: компенсирует высоту фиксированной шапки при переходе по якорям */
   scroll-padding-top: 96px;
 }
 
@@ -41,7 +40,7 @@ svg {
   max-width: 100%;
 }
 
-/* 5. Формы наследуют шрифт от родителя */
+/* 5. Формы наследуют шрифт */
 input,
 button,
 textarea,
@@ -50,12 +49,11 @@ select {
   color: inherit;
 }
 
-/* 5b. FIX: textarea по умолчанию не резиновая по горизонтали */
 textarea {
   resize: vertical;
 }
 
-/* 6. Заголовки и текст переносятся нормально */
+/* 6. Нормальный перенос текста */
 p,
 h1,
 h2,
@@ -66,7 +64,7 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* 7. Списки без маркеров — только там, где явно задан role="list" */
+/* 7. Списки без маркеров там, где явно задан role="list" */
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
@@ -77,11 +75,9 @@ ol[role='list'] {
 button {
   background: none;
   border: none;
-  cursor: pointer;
-  /* FIX: убирает дефолтный padding — иначе иконки в шапке «разъезжаются» */
   padding: 0;
-  /* FIX: Safari красит кнопки системным синим, если не сбросить */
   color: inherit;
+  cursor: pointer;
 }
 
 /* 9. Ссылки наследуют цвет */
@@ -90,7 +86,7 @@ a {
   text-decoration: none;
 }
 
-/* 10. Доступность: отключаем анимации для тех, кто просил */
+/* 10. Доступность: уважаем prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
