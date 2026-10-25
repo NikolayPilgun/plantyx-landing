@@ -431,3 +431,100 @@ body {
 /* ==========================================================================
    PROCESS
    ========================================================================== */
+.process__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+.process__intro {
+  max-width: 480px;
+  color: var(--color-text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.process__heading-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.process__title {
+  max-width: 900px;
+}
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: gap var(--transition-fast);
+}
+.link-arrow:hover {
+  gap: var(--space-sm);
+}
+.arrow-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+}
+.process__slider {
+  display: grid;
+  gap: var(--space-md);
+}
+.process__image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+  object-fit: cover;
+}
+.process__controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.process__step-badge {
+  font-size: 13px;
+  color: var(--color-text-light);
+}
+.process__step-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.3;
+}
+.slider-arrows {
+  display: flex;
+  gap: var(--space-xs);
+}
+.arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+.arrow-btn:hover {
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-text-main);
+}
+@media (min-width: 768px) {
+  .process__slider {
+    grid-template-columns: 1.6fr 1fr;
+    align-items: end;
+  }
+}
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
