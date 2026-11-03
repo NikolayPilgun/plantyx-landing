@@ -802,7 +802,6 @@ body {
 }
 .gallery__item {
   margin: 0;
-  aspect-ratio: 4/5;
   overflow: hidden;
   border-radius: var(--radius-card);
 }
@@ -816,5 +815,69 @@ body {
   .gallery__container {
     grid-template-columns: 1fr 2fr;
     gap: var(--space-sm);
+  }
+}
+/* ==========================================================================
+   INSTAGRAM CTA
+   ========================================================================== */
+.instagram__card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 280px;
+  padding: var(--space-lg) var(--space-md);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background-color: var(--color-bg-alt);
+}
+.instagram__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  z-index: 0;
+}
+.instagram__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 420px;
+}
+.instagram__title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.25;
+  color: var(--color-text-main);
+}
+.instagram__text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  max-width: 320px;
+}
+@media (min-width: 768px) {
+  .instagram__card {
+    min-height: 380px;
+    padding: var(--space-xl) var(--space-lg);
+  }
+  .instagram__title {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1024px) {
+  .instagram__card {
+    min-height: 460px;
+    padding: var(--space-2xl) var(--space-2xl);
+  }
+  .instagram__title {
+    font-size: 44px;
+  }
+  .instagram__text {
+    font-size: 14px;
   }
 }
