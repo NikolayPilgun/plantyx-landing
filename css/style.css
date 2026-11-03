@@ -160,6 +160,17 @@ body {
   outline-offset: 3px;
   border-radius: 2px;
 }
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
 /* ==========================================================================
    HEADER
    ========================================================================== */
@@ -898,5 +909,95 @@ body {
   }
   .instagram__text {
     font-size: 14px;
+  }
+}
+/* ==========================================================================
+   NEWSLETTER
+   ========================================================================== */
+.newsletter {
+  border-top: 1px solid var(--color-border);
+}
+.newsletter__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+/* --- Форма --- */
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 100%;
+}
+.newsletter__input {
+  width: 100%;
+  padding: 14px 0;
+  font-size: 14px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-main);
+  transition: border-color var(--transition-fast);
+}
+.newsletter__input::placeholder {
+  color: var(--color-text-subtle);
+}
+.newsletter__input:focus {
+  outline: none;
+  border-bottom-color: var(--color-text-main);
+}
+.newsletter__input:focus-visible {
+  outline: none;
+}
+.newsletter__btn {
+  align-self: flex-start;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-text-main);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background-color var(--transition-fast);
+}
+.newsletter__btn:hover {
+  background-color: #333;
+}
+/* --- Сообщение об ошибке валидации --- */
+.newsletter__error {
+  font-size: 12px;
+  color: #c0392b;
+  min-height: 16px;
+}
+
+/* --- Адаптив --- */
+@media (min-width: 768px) {
+  .newsletter__container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+  }
+  .newsletter__title {
+    flex: 0 0 auto;
+  }
+  .newsletter__form {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-sm);
+    max-width: 480px;
+    padding: 6px 6px 6px 20px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    background-color: var(--color-bg);
+  }
+  .newsletter__input {
+    flex: 1 1 auto;
+    padding: 10px 0;
+    border-bottom: none;
+  }
+  .newsletter__btn {
+    flex-shrink: 0;
+    align-self: stretch;
+    padding-inline: 28px;
   }
 }
