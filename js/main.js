@@ -60,3 +60,34 @@ if (rail) {
     { passive: false },
   );
 }
+
+// ---------- Newsletter: простая валидация ----------
+const newsletterForm = document.querySelector('.newsletter__form');
+
+if (newsletterForm) {
+  const input = newsletterForm.querySelector('.newsletter__input');
+  newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const value = input.value.trim();
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+
+    // удалить старое сообщение
+    const existingError = newsletterForm.parentElement.querySelector('.newsletter__error');
+    if (existingError) {
+      existingError.remove();
+    }
+    if (!isValid) {
+      input.setAttribute('aria-invalid', 'true');
+      const error = document.createElement('p');
+      error.className = 'newsletter__error';
+      error.setAttribute('role', 'alert');
+      error.textContent = 'Please enter a valid email address.';
+      newsletterForm.after(error);
+      input.focus();
+      return;
+    }
+    input.removeAttribute('aria-invalid');
+    newsletterForm.reset();
+  });
+}

@@ -171,6 +171,7 @@ body {
   white-space: nowrap !important;
   border: 0 !important;
 }
+
 /* ==========================================================================
    HEADER
    ========================================================================== */
@@ -550,53 +551,7 @@ body {
     align-items: end;
   }
 }
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
-.footer {
-  background-color: var(--color-bg-alt);
-  padding-block: var(--space-xl);
-}
-.footer__container {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-.footer__logo {
-  font-family: var(--font-serif);
-  font-size: 22px;
-  font-weight: 600;
-}
-.footer__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-md);
-  font-size: 14px;
-}
-.footer__links a {
-  color: var(--color-text-muted);
-  transition: color var(--transition-fast);
-}
-.footer__links a:hover {
-  color: var(--color-text-main);
-}
-.footer__socials {
-  display: flex;
-  gap: var(--space-sm);
-  font-size: 14px;
-  color: var(--color-text-muted);
-  transition: color var(--transition-fast);
-}
-.footer__socials a:hover {
-  color: var(--color-text-main);
-}
-@media (min-width: 768px) {
-  .footer__container {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
+
 /* ==========================================================================
    SHOP
    ========================================================================== */
@@ -977,9 +932,11 @@ body {
     justify-content: space-between;
     gap: var(--space-xl);
   }
+
   .newsletter__title {
     flex: 0 0 auto;
   }
+
   .newsletter__form {
     flex-direction: row;
     align-items: center;
@@ -990,14 +947,121 @@ body {
     border-radius: var(--radius-pill);
     background-color: var(--color-bg);
   }
+
   .newsletter__input {
     flex: 1 1 auto;
     padding: 10px 0;
     border-bottom: none;
   }
+
   .newsletter__btn {
     flex-shrink: 0;
     align-self: stretch;
     padding-inline: 28px;
+  }
+}
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+  padding-block: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+/* --- Лого --- */
+.footer__logo {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text-main);
+}
+
+/* --- Ссылки --- */
+.footer__nav {
+  width: 100%;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.footer__link {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.footer__link:hover {
+  color: var(--color-text-main);
+}
+
+/* --- Соцсети --- */
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+  justify-content: center;
+}
+
+.footer__social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.footer__social:hover {
+  color: var(--color-text-main);
+}
+
+/* --- Адаптив --- */
+@media (min-width: 768px) {
+  .footer {
+    padding-block: var(--space-lg);
+  }
+
+  .footer__container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .footer__nav {
+    width: auto;
+  }
+
+  .footer__links {
+    flex-direction: row;
+    gap: var(--space-lg);
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .footer__socials {
+    width: auto;
+    padding-top: 0;
+    border-top: none;
+    gap: var(--space-sm);
   }
 }
