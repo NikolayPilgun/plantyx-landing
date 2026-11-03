@@ -42,3 +42,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// ---------- Горизонтальная лента Shop ----------
+const rail = document.querySelector('.shop__rail');
+
+if (rail) {
+  // Прокрутка колесом мыши по горизонтали (десктоп)
+  rail.addEventListener(
+    'wheel',
+    (e) => {
+      // Если контент реально скроллится по X и пользователь крутит вертикально
+      if (rail.scrollWidth > rail.clientWidth && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        rail.scrollBy({ left: e.deltaY, behavior: 'auto' });
+      }
+    },
+    { passive: false },
+  );
+}

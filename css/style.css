@@ -694,3 +694,101 @@ body {
   color: var(--color-text-muted);
   white-space: nowrap;
 }
+/* ==========================================================================
+   REVIEWS
+   ========================================================================== */
+.reviews__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+/* --- Мета-колонка --- */
+.reviews__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.reviews__desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  max-width: 300px;
+}
+.reviews__rating {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  margin-top: var(--space-xs);
+}
+.rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+.rating__stars {
+  color: var(--color-rating);
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+.rating__value {
+  font-size: 12px;
+  color: var(--color-text-main);
+}
+.reviews__count {
+  font-size: 11px;
+  color: var(--color-text-subtle);
+}
+/* --- Тело отзыва --- */
+.reviews__controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-xs);
+}
+.reviews__quote {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.45;
+  color: var(--color-text-main);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.reviews__author {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+.reviews__author-name {
+  font-size: 15px;
+  font-weight: 500;
+}
+.reviews__author-location {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+/* --- Адаптив --- */
+@media (min-width: 768px) {
+  .reviews__quote {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  .reviews__container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-2xl);
+  }
+  .reviews__meta {
+    flex: 0 0 300px;
+    position: sticky;
+    top: calc(var(--header-height-desktop) + var(--space-lg));
+  }
+  .reviews__body {
+    flex: 1 1 auto;
+  }
+  .reviews__quote {
+    font-size: 32px;
+    line-height: 1.35;
+  }
+}
