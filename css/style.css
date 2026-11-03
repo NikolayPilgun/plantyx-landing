@@ -744,6 +744,11 @@ body {
   justify-content: flex-end;
   gap: var(--space-xs);
 }
+.reviews__top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
 .reviews__quote {
   font-family: var(--font-serif);
   font-weight: 400;
@@ -787,9 +792,19 @@ body {
   .reviews__body {
     flex: 1 1 auto;
   }
+  .reviews__top {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-lg);
+  }
   .reviews__quote {
+    flex: 1 1 auto;
     font-size: 32px;
     line-height: 1.35;
+  }
+  .reviews__controls {
+    flex-shrink: 0;
   }
 }
 /* ==========================================================================
@@ -846,6 +861,10 @@ body {
   flex-direction: column;
   gap: var(--space-sm);
   max-width: 420px;
+  padding: var(--space-sm);
+  border-radius: var(--radius-card);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
+  backdrop-filter: blur(2px);
 }
 .instagram__title {
   font-family: var(--font-serif);
